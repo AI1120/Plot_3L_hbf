@@ -5,11 +5,13 @@ pipeline {
             steps {
                 echo 'Building...'
                 // Add build commands here
+                pip install -r requirements.txt
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                python3 plot_3L_hbf_with_mark.py
                 // Add test commands here
             }
         }
