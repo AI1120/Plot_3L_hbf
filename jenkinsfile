@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                // Create a virtual environment
                 sh '''
                 python3 -m venv venv  # Create a virtual environment named 'venv'
                 source venv/bin/activate  # Activate the virtual environment
@@ -16,7 +15,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                // Activate the virtual environment and run tests
                 sh '''
                 source venv/bin/activate  # Activate the virtual environment
                 python3 plot_3L_hbf_with_mark.py  # Run your Python script
@@ -26,10 +24,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                // Activate the virtual environment and run deployment commands if needed
                 sh '''
                 source venv/bin/activate  # Activate the virtual environment for deployment
-                # Add your deployment commands here, e.g., upload files, run scripts, etc.
+                # Add your deployment commands here, if needed
                 '''
             }
         }
