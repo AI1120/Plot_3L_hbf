@@ -3,4 +3,3 @@ numpy
 pillow
 matplotlib
 img2pdf
-math
